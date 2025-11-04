@@ -80,8 +80,6 @@ set snow=[38;2;236;242;255m▓[0m
 set mid46=%snow%
 
 :: Grid Slots:::::
-set /a slotnumber=%size% * %size%
-for /l %%i in (10, 1, %slotnumber%) do (set b%%1=░)
 set b00=░
 set b01=░
 set b02=░
@@ -92,6 +90,96 @@ set b06=░
 set b07=░
 set b08=░
 set b09=░
+set b10=░
+set b11=░
+set b12=░
+set b13=░
+set b14=░
+set b15=░
+set b16=░
+set b17=░
+set b18=░
+set b19=░
+set b20=░
+set b21=░
+set b22=░
+set b23=░
+set b24=░
+set b25=░
+set b26=░
+set b27=░
+set b28=░
+set b29=░
+set b30=░
+set b31=░
+set b32=░
+set b33=░
+set b34=░
+set b35=░
+set b36=░
+set b37=░
+set b38=░
+set b39=░
+set b40=░
+set b41=░
+set b42=░
+set b43=░
+set b44=░
+set b45=░
+set b46=░
+set b47=░
+set b48=░
+set b49=░
+set b50=░
+set b51=░
+set b52=░
+set b53=░
+set b54=░
+set b55=░
+set b56=░
+set b57=░
+set b58=░
+set b59=░
+set b60=░
+set b61=░
+set b62=░
+set b63=░
+set b64=░
+set b65=░
+set b66=░
+set b67=░
+set b68=░
+set b69=░
+set b70=░
+set b71=░
+set b72=░
+set b73=░
+set b74=░
+set b75=░
+set b76=░
+set b77=░
+set b78=░
+set b79=░
+set b80=░
+set b81=░
+set b82=░
+set b83=░
+set b84=░
+set b85=░
+set b86=░
+set b87=░
+set b88=░
+set b89=░
+set b90=░
+set b91=░
+set b92=░
+set b93=░
+set b94=░
+set b95=░
+set b96=░
+set b97=░
+set b98=░
+set b99=░
 
 :rendering
 cls
@@ -467,5 +555,4 @@ echo %line6s%>>savefile.bat
 echo %line7s%>>savefile.bat
 echo %line8s%>>savefile.bat
 echo %line9s%>>savefile.bat
-
 echo pause>>savefile.bat
