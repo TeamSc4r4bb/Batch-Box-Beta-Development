@@ -1,8 +1,14 @@
  @echo off
 setlocal EnableDelayedExpansion
+set version=v1.3
+REM DO NOT FORGET TO MODIFY THE VERSION REG VALUE WHEN CHANGING THE VERSION!!!!!!!!!!!!!!!!!!!!!!!
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1 /f > nul
+REG ADD HKCU\Software\BatchBoxBeta /f
+reg add HKCU\Software\BatchBoxBeta\!version! /f
+REG ADD HKCU\Software\BatchBoxBeta\!version! /v version /t REG_SZ /d "!version!" /f
+REG ADD HKCU\Software\BatchBoxBeta\!version! /v made_by /t REG_SZ /d Team Sc4r4bb /f
 chcp 65001
-title v1.2 beta
+title v1.3 beta
 cls
 
 :setup
@@ -16,6 +22,8 @@ set oldposid=
 set oldposmaterial=
 set selectedmaterial=
 set currentposid=%sx%%sy%
+set registryPath=ADD HKCU\Software\BatchBoxBeta\!version!
+set creatorsName=
 echo what is the size? (only input the length)
 set /p size=
 
@@ -294,8 +302,8 @@ if %size% == 10 (
   echo [ %b00% %b10% %b20% %b30% %b40% %b50% %b60% %b70% %b80% %b90% ]
 
 )
-
 :input
+echo Version:%version%
 echo Move (WASD) or Material
 echo  ╔══════════════╗
 echo  ║Block Selector║
@@ -527,7 +535,10 @@ goto rendering
 
 :save
 cls
-copy nul savefile.bat
+echo What is the file to save in?
+set /p %savefile%=
+set %savefile%=%savefile%.bat
+copy nul %savefile%
 set line0s=echo [ %b09% %b19% %b29% %b39% %b49% %b59% %b69% %b79% %b89% %b99% ]
 set line1s=echo [ %b08% %b18% %b28% %b38% %b48% %b58% %b68% %b78% %b88% %b98% ]
 set line2s=echo [ %b07% %b17% %b27% %b37% %b47% %b57% %b67% %b77% %b87% %b97% ]
@@ -542,17 +553,17 @@ set linesize=echo grid size: %size%
 if %size% GTR 10 (set lineerror=echo error: yes) else (set lineerror=echo error: no)
 set off=@echo off
 echo %off%>>savefile.bat
-echo chcp 65001>>savefile.bat
-echo %linesize%>>savefile.bat
-echo %lineerror%>>savefile.bat
-echo %line0s%>>savefile.bat
-echo %line1s%>>savefile.bat
-echo %line2s%>>savefile.bat
-echo %line3s%>>savefile.bat
-echo %line4s%>>savefile.bat
-echo %line5s%>>savefile.bat
-echo %line6s%>>savefile.bat
-echo %line7s%>>savefile.bat
-echo %line8s%>>savefile.bat
-echo %line9s%>>savefile.bat
-echo pause>>savefile.bat
+echo chcp 65001>>%savefile%
+echo %linesize%>>%savefile%
+echo %lineerror%>>%savefile%
+echo %line0s%>>%savefile%
+echo %line1s%>>%savefile%
+echo %line2s%>>%savefile%
+echo %line3s%>>%savefile%
+echo %line4s%>>%savefile%
+echo %line5s%>>%savefile%
+echo %line6s%>>%savefile%
+echo %line7s%>>%savefile%
+echo %line8s%>>%savefile%
+echo %line9s%>>%savefile%
+echo pause>>%savefile%
