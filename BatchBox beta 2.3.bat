@@ -1,6 +1,6 @@
 @echo off
 setlocal EnableDelayedExpansion
-set version=v(b)2.2
+set version=v(b)2.3
 REM DO NOT FORGET TO MODIFY THE VERSION REG VALUE WHEN CHANGING THE VERSION!!!!!!!!!!!!!!!!!!!!!!!
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1 /f > nul
 REG ADD HKCU\Software\BatchBoxBeta /f
@@ -416,4 +416,5 @@ echo %line6s%>>%savefile%
 echo %line7s%>>%savefile%
 echo %line8s%>>%savefile%
 echo %line9s%>>%savefile%
+
 echo pause>>%savefile%
