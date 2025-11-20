@@ -119,7 +119,7 @@ for /l %%y in (0, 1, %nbline%) do (
 
   for /l %%x in (0, 1, %nbline%) do (
 
-    set b%%x%%y=░
+    set b%%xs%%y=░
 
   )
 
@@ -140,7 +140,7 @@ for /l %%y in (0, 1, %nbline%) do (
   set line%%y=
   for /l %%x in (0, 1, %nbline%) do (
 
-    set line%%y=!line%%y! !b%%x%%y!
+    set line%%y=!line%%y! !b%%xs%%y!
 
   )
 
@@ -377,7 +377,7 @@ goto cursorrender
 
 :cursorrender
 set b%oldposid%=%oldposmaterial%
-set currentposid=%sx%%sy%
+set currentposid=%sx%s%sy%
 set oldposid=%currentposid%
 set oldposmaterial=!b%currentposid%!
 set b%currentposid%=%cursoricon%
@@ -416,5 +416,4 @@ echo %line6s%>>%savefile%
 echo %line7s%>>%savefile%
 echo %line8s%>>%savefile%
 echo %line9s%>>%savefile%
-
 echo pause>>%savefile%
